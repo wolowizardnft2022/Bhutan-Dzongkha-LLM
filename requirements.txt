@@ -1,0 +1,17 @@
+# Track B QLoRA SFT deps (unchanged).
+# PyTorch is NOT pinned here: install separately for your platform.
+#   CPU pretrain (Track A):  pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   CUDA laptop (Track B):   see README.md (cu124 / cu121 wheels)
+# Both tracks need: import torch
+transformers>=4.45.0
+datasets>=2.21.0
+peft>=0.12.0
+bitsandbytes>=0.43.0
+accelerate>=0.34.0
+trl>=0.11.0
+sentencepiece>=0.2.0
+protobuf>=4.25.0
+pyyaml>=6.0.1
+tqdm>=4.66.0
+huggingface_hub>=0.24.0
+numpy>=1.26.0

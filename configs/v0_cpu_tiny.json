@@ -1,0 +1,32 @@
+{
+  "model_type": "gpt_decoder",
+  "name": "dzongkha-v0-cpu-tiny",
+  "n_layer": 4,
+  "n_embd": 128,
+  "n_head": 4,
+  "n_inner": 512,
+  "block_size": 128,
+  "vocab_size": 32000,
+  "tie_embeddings": true,
+  "dropout": 0.0,
+  "bias": false,
+  "device": "cpu",
+  "dtype": "float32",
+  "approx_params": 4898816,
+  "train_notes": {
+    "batch_size": 4,
+    "grad_accum": 8,
+    "effective_batch": 32,
+    "amp": false,
+    "max_steps_hint": 2000,
+    "early_stop_on_val": true,
+    "reason": "User chose laptop/CPU only; ~1.35M train tokens \u2014 tiny smoke only, expect fast overfit"
+  },
+  "data": {
+    "train_bin": "/workspace/dzongkha-llm/data/train.bin",
+    "val_bin": "/workspace/dzongkha-llm/data/val.bin",
+    "meta": "/workspace/dzongkha-llm/data/meta.json",
+    "train_tokens": 1349747,
+    "val_tokens": 78737
+  }
+}

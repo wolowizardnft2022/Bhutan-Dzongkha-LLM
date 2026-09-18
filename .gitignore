@@ -1,0 +1,63 @@
+# --- NEVER commit (weights / caches / uncleared data) ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Hugging Face / torch caches
+.cache/
+**/huggingface/
+**/.huggingface/
+*.safetensors
+*.gguf
+
+# Training outputs & checkpoints
+outputs/
+**/checkpoint-*/
+*.pt
+*.pth
+*.ckpt
+*.bin
+!scripts/**
+
+# Packed pretrain / large text dumps (rebuild via scripts/pack_corpus.py)
+data/train.bin
+data/val.bin
+data/train.txt
+data/val.txt
+data/meta.json
+
+# SFT / RAG corpora (contain Eng–Dzo MT + mixed FineWeb; licenses uncleared for MT/ASR)
+data/sft/train.jsonl
+data/sft/val.jsonl
+data/sft/meta.json
+data/rag/corpus.jsonl
+data/rag/corpus.txt
+data/rag/meta.json
+
+# Raw downloads
+raw/
+**/fineweb2_dzo/
+**/Eng_Dzo_MT_Datasets/
+**/dzwiki*.xml.bz2
+**/hf_extra/
+
+# Tokenizer binary (confirm KarmaCST/dzoseg license before publishing)
+tokenizer/*.model
+tokenizer/*.vocab
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Lab checkpoints (alternate path)
+checkpoints/
+
+# Large eval dumps (not the tiny holdout policy; do not publish until cleared)
+eval/holdout.txt
+eval/smoke_prompts.txt

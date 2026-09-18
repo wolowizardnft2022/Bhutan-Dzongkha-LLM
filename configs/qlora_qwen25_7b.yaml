@@ -1,0 +1,39 @@
+# Track B — usable Dzongkha chat (adapters only; do not redesign the base).
+# Needs a CUDA GPU for 7B 4-bit. If Tharchen stays CPU-only, switch model_name to
+# Qwen/Qwen2.5-0.5B-Instruct (or 1.5B) and set load_in_4bit: false — much weaker chat.
+
+model_name: Qwen/Qwen2.5-7B-Instruct
+data_path: data/sft/train.jsonl
+val_path: data/sft/val.jsonl
+output_dir: outputs/qwen25-7b-dzongkha-qlora
+project_root: D:\Dzongkha-LLM
+
+max_seq_length: 1024
+num_train_epochs: 1
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 2.0e-4
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+# Qwen attention + MLP projections (matches train_sft.py)
+target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+load_in_4bit: true
+bf16: false
+fp16: false
+gradient_checkpointing: true
+
+logging_steps: 10
+save_steps: 200
+# Full pass over ~49.5K SFT rows. Use 20 only for a wiring smoke.
+max_steps: -1
+

@@ -1,0 +1,20 @@
+# Usable chat: local Ollama + RAG (not nanoGPT smoke, not QLoRA)
+model: qwen3.5:latest
+translate_model: translategemma:4b
+fallback_model: qwen3-vl:4b
+ollama_host: http://127.0.0.1:11434
+rag:
+  corpus_path: data/rag/corpus.jsonl
+  top_k: 4
+  enabled: true
+chat:
+  system: |
+    You are a helpful assistant for Dzongkha and Bhutan.
+    Prefer Dzongkha when the user writes Dzongkha; otherwise answer clearly in English and include Dzongkha when useful.
+    Use the retrieved context when relevant; if context is missing or weak, say so briefly.
+  temperature: 0.7
+  num_ctx: 4096
+ui:
+  title: Dzongkha Chat (Ollama + RAG)
+  port: 7860
+  share: false
