@@ -1,0 +1,6 @@
+{"instruction": "Translate the following Dzongkha sentence into English.", "input": "ཁྱོད་ག་དེ་སྡོད་དོ་ག?", "output": "How are you?"}
+{"instruction": "Translate the following English sentence into Dzongkha.", "input": "Thank you very much.", "output": "བཀའ་དྲིན་ཆེ།"}
+{"instruction": "Answer briefly in Dzongkha: How do you say 'yes'?", "input": "", "output": "ཨིན།"}
+{"instruction": "Explain this Dzongkha word in English.", "input": "སློབ་གྲྭ།", "output": "School."}
+{"instruction": "Translate Dzongkha to English.", "input": "ང་རྫོང་ཁ་སྦྱངས་དོ།", "output": "I am learning Dzongkha."}
+{"instruction": "Reply in Dzongkha to this greeting.", "input": "བཀྲ་ཤིས་བདེ་ལེགས།", "output": "བཀྲ་ཤིས་བདེ་ལེགས། ཁྱོད་ག་དེ་སྡོད་དོ་ག?"}
